@@ -1,4 +1,30 @@
-answers:
+lazos:
+  outputs:
+    dev:
+      dataset: mikee_dbt
+      job_execution_timeout_seconds: 300
+      job_retries: 1
+      location: US
+      method: oauth
+      priority: interactive
+      project: elite-campus-457822-c7
+      threads: 60
+      type: bigquery
+  target: dev
+lesna:
+  outputs:
+    dev:
+      dataset: dbt_test_mj
+      job_execution_timeout_seconds: 300
+      job_retries: 1
+      location: US
+      method: oauth
+      priority: interactive
+      project: elite-campus-457822-c7
+      threads: 60
+      type: bigquery
+  target: dev
+lessons:
   outputs:
     dev:
       dataset: dbt_mike
