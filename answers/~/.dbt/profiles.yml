@@ -1,0 +1,13 @@
+answers:
+  outputs:
+    dev:
+      dataset: ask
+      job_execution_timeout_seconds: 300
+      job_retries: 1
+      location: US
+      method: oauth
+      priority: interactive
+      project: elite-campus-457822-c7
+      threads: 2
+      type: bigquery
+  target: dev
