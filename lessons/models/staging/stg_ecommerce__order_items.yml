@@ -3,8 +3,14 @@ version: 2
 models:
   - name: stg_ecommerce__order_items
     description: "Line items from orders"
+    config:
+      contract:
+        enforced: true
     columns:
       - name: order_item_id
+        data_type: integer
+        constraints:
+          - type: not_null
         # Model tests (run AFTER model is built)
         tests:
           - primary_key:
@@ -12,6 +18,9 @@ models:
  
 
       - name: order_id
+        data_type: integer
+        constraints:
+          - type: not_null
         tests:
           - not_null
           - relationships:
@@ -19,10 +28,16 @@ models:
               field: order_id
 
       - name: user_id
+        data_type: integer
+        constraints:
+          - type: not_null
         tests:
           - not_null
 
       - name: product_id
+        data_type: integer
+        constraints:
+          - type: not_null
         tests:
           - not_null
           - relationships:
@@ -30,6 +45,7 @@ models:
               field: product_id
 
       - name: item_sale_price
+        data_type: float64
         description: "How much the item sold for"
         tests:
           - not_null

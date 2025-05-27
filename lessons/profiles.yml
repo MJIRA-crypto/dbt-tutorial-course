@@ -23,10 +23,10 @@ answers: # this needs to match the profile: in your dbt_project.yml file
       timeout_seconds: 300
       location: US
       priority: interactive
-
 lessons:
+  target: dev # The default for any dbt commands
   outputs:
-    dev:
+     dev:
       dataset: dbt_mike
       job_execution_timeout_seconds: 300
       job_retries: 1
@@ -36,4 +36,15 @@ lessons:
       project: elite-campus-457822-c7
       threads: 60
       type: bigquery
-  target: dev # The default for any dbt commands
+
+     testing:
+      dataset: dbt_mike_test
+      job_execution_timeout_seconds: 300
+      job_retries: 1
+      location: US
+      method: oauth
+      priority: interactive # BigQuery can use "batch" or "interactive". https://cloud.google.com/bigquery/docs/running-queries
+      project: elite-campus-457822-c7
+      threads: 60
+      type: bigquery
+
